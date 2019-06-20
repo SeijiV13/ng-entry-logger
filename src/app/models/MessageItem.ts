@@ -1,7 +1,7 @@
 export class MessageItem {
     isOpen?: boolean;
     type: string;
-    messageId: number;
+    messageId?: string;
     title: string;
     message: string;
     status?: string;

@@ -12,9 +12,8 @@ export class UpdateLogService {
   addLogs(item: MessageItem) {
     const date = new Date().toLocaleString();
     item.dateCreated = date;
-    return this.db.collection('message-item').add(item).then(
-      res => {}
-    );
+    item.messageId = date.trim();
+    return this.db.collection('message-item').add(item);
   }
 
   updateLogs(item, updates) {
@@ -29,4 +28,5 @@ export class UpdateLogService {
   deleteLogs(item) {
     return this.db.collection('message-item').doc(item.payload.doc.messageId).delete();
   }
+
 }
