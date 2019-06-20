@@ -1,0 +1,33 @@
+<accordion *ngFor="let item of items">
+    <accordion-group >
+        <button class="btn btn-link btn-block clearfix" accordion-heading>
+        <div class="pull-left float-left message-title">
+          {{item.payload.doc.data().title}} 
+          <span *ngIf="item.payload.doc.data().type === 'ERROR'" class="fa fa-bug"></span>
+          <span *ngIf="item.payload.doc.data().type === 'WARNING'" class="fa fa-exclamation-triangle"></span>
+          <span *ngIf="item.payload.doc.data().type === 'INFO'" class="fa fa-info-circle"></span>
+        </div>
+        <span *ngIf="item.payload.doc.data().dateCreated" class="badge badge-info float-right pull-right">
+            Date Created: {{item.payload.doc.data().dateCreated}}
+        </span>
+        <span *ngIf="item.payload.doc.data().causedBy" class="badge badge-secondary float-right pull-right">
+          Caused By: {{item.payload.doc.data().causedBy}}
+        </span>
+        </button>
+      <!--MESSAGE-->
+      {{item.payload.doc.data().message}}
+      <br>
+      <hr>
+      <span *ngIf="item.payload.doc.data().type === 'ERROR'" class="status-container">
+        <span class="status-item">
+            <input (click)="updateItem('not fixed')" name="status" class="status-checkbox" type="radio">
+            <span class="fa fa-times"></span> not fixed
+        </span>
+
+        <span (click)="updateItem('fixed')" class="status-item" class="status-item">
+            <input name="status" class="status-checkbox" type="radio">
+            <span class="fa fa-check"></span> fixed
+        </span>
+      </span>
+    </accordion-group>
+ </accordion>

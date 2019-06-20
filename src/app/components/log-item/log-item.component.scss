@@ -1,0 +1,45 @@
+.badge {
+    margin-left: 10px;
+}
+
+
+.fa-times {
+    color: rgb(170, 15, 15);
+}
+
+.fa-check {
+    color: green;
+}
+
+.fa-bug {
+    color: rgb(170, 18, 18);
+}
+
+.fa-exclamation-triangle {
+    color: rgb(224, 173, 5);
+}
+
+.fa-info-circle {
+    color:gray;
+}
+
+.status-item {
+    margin-right: 20px;
+}
+
+.status-checkbox {
+    vertical-align: sub;
+}
+
+.message-title {
+    color:gray;
+}
+
+button:focus, .button:active {
+    outline:none;
+    box-shadow: none;
+}
+
+.badge-info {
+    background: rgb(6, 6, 117) !important;
+}

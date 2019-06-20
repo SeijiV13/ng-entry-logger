@@ -1,0 +1,43 @@
+<!-- LEFT PANEL -->
+<div class="body">
+
+  <div class="left-panel">
+     <div class="title">
+      <span class="fa fa-align-right"></span> EN Logger  
+     </div>
+     <hr class="title-break">
+     <div (click)="changeRoute('entry-home')" class="menu-item"><span class="fa fa-home"></span> Home</div>
+     <div (click)="changeRoute('entry-statistics')"class="menu-item"><span class="fa fa-copy"></span> Statistics</div>
+  </div>
+  <div class="container">
+    <h2>Logs</h2>
+    <hr>
+    <div class="filter">
+      <div class="row">
+        <div class="col-sm-3">
+            <label for="title">Title</label>
+            <input class="form-control">
+        </div>
+        <div class="col-sm-3">
+            <label for="type">Type</label>
+            <select class="form-control">
+               <option value=""></option>
+               <option *ngFor="let data of types" [value]="data.value">{{data.description}}</option>
+            </select>
+        </div>
+        <div class="col-sm-6 button-container">
+          <button class="btn btn-info">Clear</button>
+          <button class="btn btn-info" (click)="addItem()">Filter</button>
+        </div>
+      </div>
+    </div>
+    <br>
+      <div class="row">
+          <div class="col-sm-12">
+             <log-item [items]="items"></log-item>
+          </div>
+        </div>
+      
+  </div>
+
+</div>

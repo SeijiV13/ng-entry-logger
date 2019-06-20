@@ -1,0 +1,41 @@
+.left-panel {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    background: rgb(27, 27, 73);
+    color:white;
+    padding: 15px;
+    font-family: avenir-bold;
+}
+
+.left-panel .title {
+    font-size:20px;
+}
+
+.title-break {
+    border-color: rgb(206, 131, 19);
+}
+
+.menu-item {
+    cursor:pointer;
+    width: 100%;
+    padding: 10px;
+}
+
+.filter {
+    background: rgb(236, 231, 231);
+    padding:20px;
+}
+
+.btn {
+    border-style: none;
+    background: rgb(85, 78, 78);
+    width: 80px;
+    display:block;
+    margin-bottom: 10px;
+
+}
+
+.button-container {
+    text-align: -webkit-right;
+}
