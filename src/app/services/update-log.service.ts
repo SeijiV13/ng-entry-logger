@@ -13,20 +13,23 @@ export class UpdateLogService {
     const date = new Date().toLocaleString();
     item.dateCreated = date;
     item.messageId = date.trim();
+    if(item.type === 'ERROR') {
+      item.status = 'not fixed';
+    }
     return this.db.collection('message-item').add(item);
   }
 
   updateLogs(item, updates) {
-    return this.db.collection('message-item').doc(item.payload.doc.messageId)
-    .set(updates)
+    return this.db.collection('message-item').doc(item.payload.doc.id)
+    .update(updates);
   }
 
   getLogs() {
-    return  this.db.collection('/message-item').snapshotChanges();
+    return  this.db.collection('message-item').snapshotChanges();
   }
 
   deleteLogs(item) {
-    return this.db.collection('message-item').doc(item.payload.doc.messageId).delete();
+    return this.db.collection('message-item').doc(item.payload.doc.data().messageId).delete();
   }
 
 }

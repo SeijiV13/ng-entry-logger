@@ -10,6 +10,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  menuOpen = true;
   filterForm: FormGroup;
   items: any[] = [];
   constructor(private updateLogService: UpdateLogService,
@@ -41,7 +42,6 @@ export class HomeComponent implements OnInit {
       this.items = data;
       this.filter();
     });
-    this.addItem();
   }
 
   clear() {
@@ -68,6 +68,11 @@ export class HomeComponent implements OnInit {
 
   changeRoute(router: string) {
     this.router.navigate([`/${router}`]);
+  }
+
+
+  updateItem(event) {
+    this.updateLogService.updateLogs(event.item, {status: event.status});
   }
 
   addItem() {

@@ -1,7 +1,7 @@
 <!-- LEFT PANEL -->
 <div class="body">
 
-  <div class="left-panel">
+  <div *ngIf="menuOpen" class="left-panel">
      <div class="title">
       <span class="fa fa-align-right"></span> EN Logger  
      </div>
@@ -34,7 +34,7 @@
     <br>
       <div class="row">
           <div class="col-sm-12">
-             <log-item [items]="items"></log-item>
+             <log-item (dataEmitter)="updateItem($event)" [items]="items"></log-item>
           </div>
         </div>
       

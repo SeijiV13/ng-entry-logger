@@ -18,16 +18,18 @@
       {{item.payload.doc.data().message}}
       <br>
       <hr>
-      <span *ngIf="item.payload.doc.data().type === 'ERROR'" class="status-container">
-        <span class="status-item">
-            <input (click)="updateItem('not fixed')" name="status" class="status-checkbox" type="radio">
-            <span class="fa fa-times"></span> not fixed
+      <div [formGroup]="statusForm">
+        <span *ngIf="item.payload.doc.data().type === 'ERROR'" class="status-container">
+          <span class="status-item">
+              <input formControlName="status" value="not fixed" (click)="updateItem('not fixed', item)" name="status" class="status-checkbox" type="radio">
+              <span class="fa fa-times"></span> not fixed
+          </span>
+  
+          <span (click)="updateItem('fixed', item)" class="status-item" class="status-item">
+              <input formControlName="status" value="fixed"  name="status" class="status-checkbox" type="radio">
+              <span class="fa fa-check"></span> fixed
+          </span>
         </span>
-
-        <span (click)="updateItem('fixed')" class="status-item" class="status-item">
-            <input name="status" class="status-checkbox" type="radio">
-            <span class="fa fa-check"></span> fixed
-        </span>
-      </span>
+      </div>
     </accordion-group>
  </accordion>
