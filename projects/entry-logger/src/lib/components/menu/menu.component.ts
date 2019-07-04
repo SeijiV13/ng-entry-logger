@@ -23,8 +23,7 @@ export class MenuComponent implements OnInit {
   }
 
   changeRoute(path) {
-    
   }
-  
+
 
 }

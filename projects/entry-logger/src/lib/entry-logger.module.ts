@@ -11,17 +11,20 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { HomeComponent, LogItemComponent, MenuComponent } from './components';
 import { BaseComponent } from './components/base/base.component';
 import { AccordionModule } from 'ngx-bootstrap';
+import { ConfigService } from './services';
+import { Config } from './models/Config';
 
 const environment = {
   firebase: {
-    apiKey: 'AIzaSyA0KYE73SnQywhGgVYMAstW4Je3A1GL2W8',
-    authDomain: 'en-logger.firebaseapp.com',
-    databaseURL: 'https://en-logger.firebaseio.com',
-    projectId: 'en-logger',
-    storageBucket: 'en-logger.appspot.com',
-    messagingSenderId: '415314818217',
+    apiKey: '',
+    authDomain: '',
+    databaseURL: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: '',
   }
 };
+
 @NgModule({
   declarations: [EntryLoggerComponent,
     HomeComponent,
@@ -38,11 +41,31 @@ const environment = {
     AngularFireModule.initializeApp(environment.firebase, 'En-Logger'),
     AngularFirestoreModule,
   ],
-  providers: [UpdateLogService],
   exports: [EntryLoggerComponent,
     HomeComponent,
     LogItemComponent,
     BaseComponent,
     MenuComponent]
 })
-export class EntryLoggerModule { }
+export class EntryLoggerModule {
+
+  static forRoot(config: Config) {
+    environment.firebase.apiKey = config.apiKey;
+    environment.firebase.authDomain = config.authDomain;
+    environment.firebase.databaseURL = config.databaseURL;
+    environment.firebase.messagingSenderId = config.messagingSenderId;
+    environment.firebase.projectId = config.projectId;
+    environment.firebase.storageBucket = config.storageBucket;
+    return {
+      ngModule: EntryLoggerModule,
+      providers: [
+        UpdateLogService,
+        {
+          provide: ConfigService,
+          useValue: config
+        }
+      ]
+    };
+  }
+
+ }
