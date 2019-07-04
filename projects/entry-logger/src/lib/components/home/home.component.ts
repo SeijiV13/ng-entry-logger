@@ -77,14 +77,14 @@ export class HomeComponent implements OnInit {
 
   addItem() {
     this.updateLogService.addLogs({
-      type: "ERROR",
-      title: "Error on Service 1",
-      message: "cannot reach the server"
+      type: 'ERROR',
+      title: 'Error on Service 1',
+      message: 'cannot reach the server'
     }).then(
       res => {
       console.log(res);
       }
-    )
+    );
   }
 
 }

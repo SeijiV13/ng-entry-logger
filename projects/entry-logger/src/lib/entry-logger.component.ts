@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-entry-logger',
+  selector: 'entry-logger',
   template: `
     <p>
       entry-logger works!

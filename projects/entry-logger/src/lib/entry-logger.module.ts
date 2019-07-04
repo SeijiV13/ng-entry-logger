@@ -13,6 +13,7 @@ import { BaseComponent } from './components/base/base.component';
 import { AccordionModule } from 'ngx-bootstrap';
 import { ConfigService } from './services';
 import { Config } from './models/Config';
+import { CommonModule } from '@angular/common';
 
 const environment = {
   firebase: {
@@ -32,6 +33,7 @@ const environment = {
     BaseComponent,
     MenuComponent],
   imports: [
+    CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
