@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: avenir-regular;
+    src: url(./fonts/AvenirNextLTPro-Regular.otf); 
+}
+
+@font-face {
+    font-family: avenir-bold;
+    src: url(./fonts/AvenirNextLTPro-Bold.otf); 
+}
+
+@font-face {
+    font-family: avenir-demi;
+    src: url(./fonts/AvenirNextLTPro-Demi.otf); 
+}
+body {
+    font-family: Helvetica;
+    background: red
+}
