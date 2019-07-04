@@ -1,5 +1,5 @@
-<accordion *ngFor="let item of items">
-    <accordion-group >
+<accordion *ngFor="let item of items; let i = index">
+    <accordion-group   [isOpen]="true">
         <button class="btn btn-link btn-block clearfix" accordion-heading>
         <div class="pull-left float-left message-title">
           {{item.payload.doc.data().title}} 
@@ -18,18 +18,17 @@
       {{item.payload.doc.data().message}}
       <br>
       <hr>
-      <div [formGroup]="statusForm">
         <span *ngIf="item.payload.doc.data().type === 'ERROR'" class="status-container">
           <span class="status-item">
-              <input formControlName="status" value="not fixed" (click)="updateItem('not fixed', item)" name="status" class="status-checkbox" type="radio">
+              <input  [(ngModel)]="item.payload.doc.data().status" value="not fixed" (click)="updateItem('not fixed', item)" name="status-{{i}}" class="status-checkbox" type="radio">
               <span class="fa fa-times"></span> not fixed
           </span>
   
-          <span (click)="updateItem('fixed', item)" class="status-item" class="status-item">
-              <input formControlName="status" value="fixed"  name="status" class="status-checkbox" type="radio">
+          <span class="status-item" class="status-item">
+              <input [(ngModel)]="item.payload.doc.data().status" value="fixed"  (click)="updateItem('fixed', item)"  name="status-{{i}}" class="status-checkbox" type="radio">
               <span class="fa fa-check"></span> fixed
           </span>
         </span>
-      </div>
+    
     </accordion-group>
  </accordion>

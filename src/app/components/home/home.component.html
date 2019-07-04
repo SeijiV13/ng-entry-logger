@@ -1,16 +1,7 @@
 <!-- LEFT PANEL -->
 <div class="body">
-
-  <div *ngIf="menuOpen" class="left-panel">
-     <div class="title">
-      <span class="fa fa-align-right"></span> EN Logger  
-     </div>
-     <hr class="title-break">
-     <div (click)="changeRoute('entry-home')" class="menu-item"><span class="fa fa-home"></span> Home</div>
-     <div (click)="changeRoute('entry-statistics')"class="menu-item"><span class="fa fa-copy"></span> Statistics</div>
-  </div>
   <div class="container">
-    <h2>Logs</h2>
+    <h2>Registered Logs</h2>
     <hr>
     <div class="filter">
       <div class="row" [formGroup]="filterForm">
@@ -34,10 +25,16 @@
     <br>
       <div class="row">
           <div class="col-sm-12">
-             <log-item (dataEmitter)="updateItem($event)" [items]="items"></log-item>
+             <div class="no-results" *ngIf="items.length == 0">No Results</div>
+             <log-item *ngIf="items.length > 0" (dataEmitter)="updateItem($event)" [items]="items"></log-item>
           </div>
         </div>
       
   </div>
 
+</div>
+
+
+<div class="footer">
+    <span class="fa fa-align-right"></span>
 </div>
