@@ -26,7 +26,7 @@
       <div class="row">
           <div class="col-sm-12">
              <div class="no-results" *ngIf="items.length == 0">No Results</div>
-             <log-item *ngIf="items.length > 0" (dataEmitter)="updateItem($event)" [items]="items"></log-item>
+             <entry-log-item *ngIf="items.length > 0" (dataEmitter)="updateItem($event)" [items]="items"></entry-log-item>
           </div>
         </div>
       

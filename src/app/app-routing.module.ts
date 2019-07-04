@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
@@ -8,7 +9,7 @@ const routes: Routes = [
     redirectTo: '/entry-home'
   },
   {
-    path: 'entry-home', loadChildren: './components/home/home.module#HomeModule'
+    path: 'entry-home', component: AppComponent
   }
 ];
 

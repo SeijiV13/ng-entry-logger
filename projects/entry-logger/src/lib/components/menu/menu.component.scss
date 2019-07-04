@@ -1,0 +1,35 @@
+.left-panel {
+    width: 220px;
+    height: 100%;
+    position: fixed;
+    background: rgb(48, 48, 48);
+    color:rgb(156, 154, 152);;
+    padding: 15px;
+    font-family: avenir-regular;
+    z-index: 99999;
+}
+
+.left-panel .title {
+    font-size:20px;
+}
+
+
+.menu-item {
+    cursor:pointer;
+    width: 100%;
+    padding: 10px;
+}
+
+.menu-item:hover{
+    color:white;
+}
+
+.active {
+    color: white;
+}
+
+.fa {
+    font-size: 20px;
+}
+
+

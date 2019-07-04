@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { MessageItem } from 'src/app/models/MessageItem';
+import { MessageItem } from '../../models/MessageItem';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'log-item',
+  selector: 'entry-log-item',
   templateUrl: './log-item.component.html',
   styleUrls: ['./log-item.component.scss']
 })

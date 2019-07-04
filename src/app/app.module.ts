@@ -3,14 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FontAwesomeModule } from 'ngx-icons';
-import { UpdateLogService } from './services/update-log.service';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from '../environments/environment';
+import { EntryLoggerModule } from 'projects/entry-logger/src/public_api';
 
 @NgModule({
   declarations: [
@@ -19,15 +12,9 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    FontAwesomeModule,
-    AngularFireModule.initializeApp(environment.firebase, 'En-Logger'),
-    AngularFirestoreModule,
+    EntryLoggerModule
+
   ],
-  providers: [UpdateLogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

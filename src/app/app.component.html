@@ -1,12 +1,1 @@
-
-
-
-  <div *ngIf="menuOpen" class="left-panel">
-     <div class="title">
-      <span class="fa fa-align-right"></span> EN Logger  
-     </div>
-     <hr class="title-break">
-     <div (click)="changeRoute('entry-home')" class="menu-item" [ngClass]="url == '/entry-home' ? 'active' : ''"><span class="fa fa-home"></span> Home</div>
-     <div (click)="changeRoute('entry-statistics')"class="menu-item"><span class="fa fa-copy"></span> Statistics</div>
-  </div>
-<router-outlet></router-outlet>
+<entry-base></entry-base>

@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "entry-logger": [
+        "dist/entry-logger"
+      ],
+      "entry-logger/*": [
+        "dist/entry-logger/*"
+      ]
+    }
   }
 }

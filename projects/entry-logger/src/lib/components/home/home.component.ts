@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageItem } from 'src/app/models/MessageItem';
-import { UpdateLogService } from 'src/app/services/update-log.service';
+import { MessageItem } from '../../models/MessageItem';
+import { UpdateLogService } from '../../services/update-log.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'app-home',
+  selector: 'entry-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
