@@ -1,8 +1,16 @@
 {
   "name": "entry-logger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
-    "@angular/core": "^7.2.0"
+    "@angular/core": "^7.2.0",
+    "angularfire2": "^5.2.1",
+    "core-js": "^2.5.4",
+    "firebase": "^6.2.0",
+    "font-awesome": "^4.7.0",
+    "ngx-bootstrap": "^4.3.0",
+    "ngx-icons": "^0.3.0",
+    "rxjs": "~6.3.3",
+    "tslib": "^1.9.0"
   }
 }
