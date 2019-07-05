@@ -14,6 +14,7 @@ import { AccordionModule } from 'ngx-bootstrap';
 import { ConfigService } from './services';
 import { Config } from './models/Config';
 import { CommonModule } from '@angular/common';
+import { StatsComponent } from './components/stats/stats.component';
 
 const environment = {
   firebase: {
@@ -31,7 +32,9 @@ const environment = {
     HomeComponent,
     LogItemComponent,
     BaseComponent,
-    MenuComponent],
+    MenuComponent,
+    StatsComponent
+  ],
   imports: [
     CommonModule,
     HttpClientModule,

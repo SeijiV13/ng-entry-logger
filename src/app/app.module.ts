@@ -7,8 +7,7 @@ import { EntryLoggerModule } from 'projects/entry-logger/src/public_api';
 
 @NgModule({
   declarations: [
-    AppComponent,
-  ],
+    AppComponent,  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
