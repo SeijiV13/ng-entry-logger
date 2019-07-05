@@ -63,13 +63,11 @@ Note* this is required for saving logs in the project, entry logger will not wor
 ![Creating Project](src/images/create-project.PNG "Title")
 
 
-#### Go to Database and click Create Database (choose the settings you want), this will create a nosql database and will redirect you the
-cloud firestore page.
+#### Go to Database and click Create Database (choose the settings you want), this will create a nosql database and will redirect you the cloud firestore page.
 
 ![Firestore](src/images/firestore.PNG "Title")
 
-#### Now go to Project Settings and Select the Web Platform
-to add a project
+#### Now go to Project Settings and Select the Web Platform to add a project
 
 ![Project Settings](src/images/settings.PNG "Title")
 
@@ -110,3 +108,5 @@ service cloud.firestore {
 }
 ```
 
+### Github and Documentation
+Go to [Ng-Entry-Logger-Repository]](https://github.com/SeijiV13/ng-entry-logger) for full documentation
