@@ -1,2 +1,2 @@
-<entry-menu></entry-menu>
-<entry-home></entry-home>
+<entry-menu (pageShift)="changePage($event)"></entry-menu>
+<entry-home *ngIf="page === 'home'"></entry-home>

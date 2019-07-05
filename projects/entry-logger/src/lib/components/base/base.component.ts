@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./base.component.scss']
 })
 export class BaseComponent implements OnInit {
-
+  page = 'home';
   constructor() { }
 
   ngOnInit() {
+  }
+
+  changPage(page) {
+    this.page = page;
   }
 
 }
