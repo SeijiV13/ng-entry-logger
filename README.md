@@ -81,7 +81,8 @@ On your application place the firebaseConfig on the forRoot
 of EntryLoggerModule
 
 
-``` EntryLoggerModule.forRoot({
+``` 
+EntryLoggerModule.forRoot({
       url: '/message-item',
       apiKey: "AIzaSyBOCXrpjl6RFEj13BWZYX39EQDkiwgmNGA",
       authDomain: "test-project-416eb.firebaseapp.com",
@@ -89,7 +90,22 @@ of EntryLoggerModule
       projectId: "test-project-416eb",
       storageBucket: "test-project-416eb.appspot.com",
       messagingSenderId: "38629406653",
-      appId: "1:38629406653:web:8cd326a514e418f1"
     })
 ```
-The url property will create a new collection on your firebase project when you add a log using  UpdateLogService
+The url property is user defined will create a new collection on your firebase project when you add a log using  UpdateLogService,
+
+### Issues
+you might encountered Missing or insufficient permissions 
+on requesting from Angular firestore, this is casued by not permitting to read and write in the database,
+
+Replace the Rules in the Firebase under Database with this code to resolve issue
+
+```
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write;
+    }
+  }
+}
+```
