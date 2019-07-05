@@ -11,13 +11,13 @@ NgEntryLogger includes several dependencies such as Angular Fire
 and Firebase, this will require several setup.
 
 ## How to Install
-#####Step 1
+####Step 1
 
 Install entry-logger from npm:
 
 ```npm install entry-logger --save```
 
-#####Step 2
+####Step 2
 
 Add needed package to NgModule imports:
 
@@ -29,29 +29,28 @@ Add needed package to NgModule imports:
 })
 ```
 
-#####Step 3
+####Step 3
 Install Angular Fire 2 and Firebase from npm:
 
 ```npm install angularfire2 firebase --save```
 
 
-#####Step 4
+####Step 4
 Install ngx-bootstrap from npm:
 ```npm install ngx-bootstrap --save```
 
 
-#####Step 5
+####Step 5
 Install font-awesome from npm:
 ```npm install font-awesome --save```
 
 Add node_modules/font-awesome/css/font-awesome.css on angular.json
 inside styles
 
- ```   "styles": [
-              "src/styles.scss",
-              "node_modules/font-awesome/css/font-awesome.css"
-            ],
-```
+ ```"styles": [
+     "src/styles.scss",
+     "node_modules/font-awesome/css/font-awesome.css"
+    ],```
 
 ###Creating project in firebase
 Note* this is required for saving logs in the project, entry logger will not work as firebase will serve as your database
