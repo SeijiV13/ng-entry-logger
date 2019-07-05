@@ -56,24 +56,40 @@ inside styles
 #### Creating project in firebase
 Note* this is required for saving logs in the project, entry logger will not work as firebase will serve as your database
 
-Go to [firebase.google.com](https://firebase.google.com)
+#### Go to [firebase.google.com](https://firebase.google.com)
 ![Firebase](src/images/firebase.PNG "Title")
 
-Click get Started and create a project
+#### Click get Started and create a project
 ![Creating Project](src/images/create-project.PNG "Title")
 
 
-Go to Database and click Create Database (choose the settings you want), this will create a nosql database and will redirect you the
+#### Go to Database and click Create Database (choose the settings you want), this will create a nosql database and will redirect you the
 cloud firestore page.
 
 ![Firestore](src/images/firestore.PNG "Title")
 
-Now go to Project Settings and Select the Web Platform
+#### Now go to Project Settings and Select the Web Platform
 to add a project
 
 ![Project Settings](src/images/settings.PNG "Title")
 
-Register the app with your project name and this will generate the Configuration to connect on your app
+#### Register the app with your project name and this will generate the Configuration to connect on your app
 
 ![Configuration](src/images/configuration.PNG "Title")
 
+On your application place the firebaseConfig on the forRoot
+of EntryLoggerModule
+
+
+``` EntryLoggerModule.forRoot({
+      url: '/message-item',
+      apiKey: "AIzaSyBOCXrpjl6RFEj13BWZYX39EQDkiwgmNGA",
+      authDomain: "test-project-416eb.firebaseapp.com",
+      databaseURL: "https://test-project-416eb.firebaseio.com",
+      projectId: "test-project-416eb",
+      storageBucket: "test-project-416eb.appspot.com",
+      messagingSenderId: "38629406653",
+      appId: "1:38629406653:web:8cd326a514e418f1"
+    })
+```
+The url property will create a new collection on your firebase project when you add a log using  UpdateLogService
