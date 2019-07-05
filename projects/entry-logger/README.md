@@ -107,5 +107,5 @@ service cloud.firestore {
 ```
 
 ### Github and Documentation
-Go to [Ng-Entry-Logger-Repository]](https://github.com/SeijiV13/ng-entry-logger) for full documentation
+Go to [Ng-Entry-Logger-Repository](https://github.com/SeijiV13 ng-entry-logger) for full documentation
 
