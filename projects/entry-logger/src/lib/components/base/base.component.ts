@@ -12,7 +12,7 @@ export class BaseComponent implements OnInit {
   ngOnInit() {
   }
 
-  changPage(page) {
+  changePage(page) {
     this.page = page;
   }
 
