@@ -4,7 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## What is Entry Logger
 NgEntryLogger is library for Angular 4+ that will create a UI for Application Logs, it will also provide team collabaration for
-monitoring Error counts and simple messaging feature(Coming soon)
+monitoring Error counts and simple messaging feature
+
+Note* Messaging feature is available on versions 2.0.0 above
 
 ## Getting Started
 NgEntryLogger includes several dependencies such as Angular Fire
@@ -81,7 +83,10 @@ of EntryLoggerModule
 
 ``` 
 EntryLoggerModule.forRoot({
-      url: '/message-item',
+      logsUrl: '/logs',
+      messagesUrl: '/messages',
+      usersUrl: '/users',
+      key: '1234567890'
       apiKey: "AIzaSyBOCXrpjl6RFEj13BWZYX39EQDkiwgmNGA",
       authDomain: "test-project-416eb.firebaseapp.com",
       databaseURL: "https://test-project-416eb.firebaseio.com",
@@ -90,7 +95,13 @@ EntryLoggerModule.forRoot({
       messagingSenderId: "38629406653",
     })
 ```
-The url property is user defined will create a new collection on your firebase project when you add a log using  UpdateLogService,
+The logsUrl property is user defined will create a new collection on your firebase project when you add a log using UpdateLogService.
+
+The messagesUrl property is user defined will create a new collection on your
+firebase project where all messages in the messaging feature will be stored.
+
+The usersUrl property is user defined will create a new collection on your
+firebase project whera all created users will be stored
 
 ### Issues
 you might encountered Missing or insufficient permissions 
