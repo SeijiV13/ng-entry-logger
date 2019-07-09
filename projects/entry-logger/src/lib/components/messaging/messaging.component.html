@@ -1,0 +1,41 @@
+
+<div *ngIf="login" class="container message-part">
+
+<div class="messaging">
+        <div class="mesgs">
+          <div class="msg_history">
+            <div *ngFor="let data of messages">
+                    <div *ngIf="username !== data.payload.doc.data().from" class="incoming_msg">
+                            <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                            <div class="received_msg">
+                              <div class="received_withd_msg">
+                                  <span class="username">{{data.payload.doc.data().from}}</span>
+                                <p>{{data.payload.doc.data().message}}</p>
+                                <span class="time_date">{{data.payload.doc.data().dateSent}}</span></div>
+                            </div>
+                       </div>
+                     <div *ngIf="username === data.payload.doc.data().from" class="outgoing_msg">
+                        <div class="sent_msg">
+                          <p>{{data.payload.doc.data().message}}</p>
+                          <span class="time_date">{{data.payload.doc.data().dateSent}}</span></div>
+                    </div>
+            </div>
+        
+            
+                    
+          </div>
+          <div class="type_msg">
+            <div class="input_msg_write">
+              <input type="text" [(ngModel)]="message"  class="write_msg" placeholder="Type a message" />
+              <button class="msg_send_btn" type="button" (click)="sendMessage()">Send</button>
+            </div>
+          </div>
+        </div>
+      
+      
+    </div>
+</div>
+<div *ngIf="!login" class="container">
+     <entry-login (loggedIn)="loggedIn($event)"></entry-login>
+</div>
+    

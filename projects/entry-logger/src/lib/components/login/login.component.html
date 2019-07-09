@@ -1,0 +1,37 @@
+
+<div class="login" *ngIf="formState === 'login'">
+  <h1>Login</h1>
+  <form [formGroup]="form">
+      <div *ngIf="successMessage" class="alert alert-success" role="alert">
+           {{successMessage}}
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+            <b>Error: </b>{{errorMessage}}
+        </div>
+    <p><input formControlName="username" type="text" name="login" value="" placeholder="Username"></p>
+    <p><input formControlName="password" type="password" name="password" value="" placeholder="Password"></p>
+
+    <span (click)="switch()" class="create-user">Create new user</span>
+    <p class="submit" (click)="login()"><input type="submit" name="commit" value="Login"></p>
+  </form>
+</div>
+
+<div  class="login" *ngIf="formState === 'register'">
+  <h1>Register User</h1>
+  <form [formGroup]="form">
+       <div *ngIf="successMessage"  class="alert alert-success" role="alert">
+          {{successMessage}}
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+          <b>Error: </b>{{errorMessage}} {{errorMessage}}
+        </div>
+
+
+    <p><input formControlName="username" type="text" name="login" value="" placeholder="Username"></p>
+    <p><input formControlName="password" type="password" name="password" value="" placeholder="Password"></p>
+    <p><input formControlName="confirmpassword" type="password" name="confirmPassword" value="" placeholder="Confirm Password"></p>
+ 
+    <span (click)="switch()" class="create-user">Sign In</span>
+    <p class="submit" (click)="registerUser()"><input type="submit" name="commit" value="Register"></p>
+  </form>
+</div>

@@ -15,6 +15,10 @@ import { ConfigService } from './services';
 import { Config } from './models/Config';
 import { CommonModule } from '@angular/common';
 import { StatsComponent } from './components/stats/stats.component';
+import { MessagingComponent } from './components/messaging/messaging.component';
+import { MessageService } from './services/message.service';
+import { CryptojsService } from './services/cryptojs.service';
+import { LoginComponent } from './components/login/login.component';
 
 const environment = {
   firebase: {
@@ -33,7 +37,9 @@ const environment = {
     LogItemComponent,
     BaseComponent,
     MenuComponent,
-    StatsComponent
+    StatsComponent,
+    MessagingComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -50,7 +56,8 @@ const environment = {
     HomeComponent,
     LogItemComponent,
     BaseComponent,
-    MenuComponent]
+    MenuComponent,
+    LoginComponent]
 })
 export class EntryLoggerModule {
 
@@ -65,10 +72,12 @@ export class EntryLoggerModule {
       ngModule: EntryLoggerModule,
       providers: [
         UpdateLogService,
+        MessageService,
+        CryptojsService,
         {
           provide: ConfigService,
           useValue: config
-        }
+        },
       ]
     };
   }

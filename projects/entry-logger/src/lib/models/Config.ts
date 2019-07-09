@@ -1,5 +1,8 @@
 export class Config {
-    url: string;
+    logsUrl: string;
+    messageUrl?: string;
+    key?: string;
+    usersUrl: string;
     apiKey: string;
     authDomain:  string;
     databaseURL: string;
