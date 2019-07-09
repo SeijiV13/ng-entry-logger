@@ -36,13 +36,16 @@ Install Angular Fire 2 and Firebase from npm:
 
 ```npm install angularfire2 firebase --save```
 
-
 #### Step 4
+Install crypto-js from npm:
+```npm install crypto-js --save```
+
+#### Step 5
 Install ngx-bootstrap from npm:
 ```npm install ngx-bootstrap --save```
 
 
-#### Step 5
+#### Step 6
 Install font-awesome from npm:
 ```npm install font-awesome --save```
 
@@ -101,6 +104,7 @@ firebase project where all messages in the messaging feature will be stored.
 The usersUrl property is user defined will create a new collection on your
 firebase project whera all created users will be stored
 
+The key property is user defined, this is used to encrypt username and password.
 
 ### Issues
 you might encountered Missing or insufficient permissions 
