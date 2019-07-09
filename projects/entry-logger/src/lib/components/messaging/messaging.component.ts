@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../../services/message.service';
 import { MessageItem } from '../../models';
+import { UserService } from '../../services/user.service';
+import { CryptojsService } from '../../services';
 
 @Component({
   selector: 'entry-messaging',
@@ -12,20 +14,25 @@ export class MessagingComponent implements OnInit {
   message = '';
   login = false;
   username = '';
-  constructor(private messageService: MessageService) { }
+  initial = '';
+  constructor(private messageService: MessageService, 
+    private userService: UserService,
+    private cryptoJsService: CryptojsService) { }
 
   ngOnInit() {
   }
 
   sendMessage() {
-    this.messageService.addMessage({
-      dateSent: new Date().toLocaleString(),
-      from: this.username,
-      message: this.message,
-    });
-    this.message = '';
+    this.userService.getUser(this.cryptoJsService.encryptUsingAES256(this.username)).subscribe((data: any) => {
+       this.messageService.addMessage({
+        dateSent: new Date().toLocaleString(),
+        from: this.username,
+        message: this.message,
+        color:  data[0].payload.doc.data().color
+      });
+      this.message = '';
+   });
   }
-
   loggedIn(object) {
     this.login = object.status;
     this.username = object.username;
@@ -35,6 +42,13 @@ export class MessagingComponent implements OnInit {
       });
     }
 
+  }
+
+  getColor(message) {
+  }
+
+  getInitial(username) {
+    return username.substring(0, 1);
   }
 
 }

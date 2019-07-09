@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   formState = 'login';
   errorMessage = '';
   successMessage = '';
+  colorArray = ['#1f4787', '#f23513', '#6e281b', '#0a5d61', '#610a2e', '#1a7a5f'];
   @Output() loggedIn = new EventEmitter();
   constructor(private cryptoJs: CryptojsService,
     private userService: UserService,
@@ -47,7 +48,8 @@ export class LoginComponent implements OnInit {
         } else {
           this.userService.addUser({
             username: enUsername,
-            password: enPassword
+            password: enPassword,
+            color: this.colorArray[Math.floor(Math.random() * this.colorArray.length)]
           });
           this.successMessage = 'User successfully added';
 

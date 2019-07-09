@@ -6,7 +6,11 @@
           <div class="msg_history">
             <div *ngFor="let data of messages">
                     <div *ngIf="username !== data.payload.doc.data().from" class="incoming_msg">
-                            <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                            <div class="incoming_msg_img"> 
+                              <div [style.background-color]="data.payload.doc.data().color" class="user-profile">
+                                <span class="user-initial">{{getInitial(data.payload.doc.data().from)}}</span>
+                              </div>  
+                            </div>
                             <div class="received_msg">
                               <div class="received_withd_msg">
                                   <span class="username">{{data.payload.doc.data().from}}</span>
